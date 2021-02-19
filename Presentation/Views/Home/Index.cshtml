@@ -1,0 +1,27 @@
+﻿@model IEnumerable<TreeViewModel>
+@using Presentation.Infrastructure
+@{
+    ViewData["Title"] = "Home Page";
+}
+<div class="col-md-12 form-group form-row">
+    <div class="col-md-4 p-3">
+        @Html.TreeView((List<TreeViewModel>)ViewBag.List1, 4, new { @class = "form-control shadow bg-warning text-capitalize", style = "color:red;", size = 10, onchange = "alert(this.value)", name = "nnnnn", id = "s", dir = "rtl" })
+    </div>
+    <div class="col-md-4 p-3">
+        @Html.TreeView((List<TreeViewModel>)ViewBag.List1, new { @class = "form-control bg-secondary text-white", size = 10, name = "aaa", id = "ss", dir = "rtl" })
+    </div>
+    <div class="col-md-4 p-3">
+        @Html.TreeView((List<TreeViewModel>)ViewBag.List1)
+    </div>
+</div>
+<div class="col-md-12 form-group form-row">
+    <div class="col-md-4 p-3">
+        @Html.TreeView(Model.ToList(), 3, new { @class = "form-control shadow bg-warning text-capitalize", style = "color:red;", size = 10, onchange = "alert(this.value)", name = "nnnnn", id = "s", dir = "rtl" })
+    </div>
+    <div class="col-md-4 p-3">
+        @Html.TreeView(Model.ToList(), new { @class = "form-control bg-secondary text-white", size = 10, name = "aaa", id = "ss", dir = "rtl" })
+    </div>
+    <div class="col-md-4 p-3">
+        @Html.TreeView(Model.ToList())
+    </div>
+</div>
